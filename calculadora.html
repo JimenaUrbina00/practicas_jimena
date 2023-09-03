@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        input {
+            width: 100px;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin: 5px;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Calculadora</h2>
+        <input type="number" id="numero1" placeholder="Número 1">
+        <input type="number" id="numero2" placeholder="Número 2">
+        <button onclick="sumar()">Sumar</button>
+        <button onclick="multiplicar()">Multiplicar</button>
+        <button onclick="restar()">Restar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function sumar() {
+            const numero1 = parseFloat(document.getElementById("numero1").value);
+            const numero2 = parseFloat(document.getElementById("numero2").value);
+            const resultado = numero1 + numero2;
+            document.getElementById("resultado").textContent = `Resultado: ${resultado}`;
+        }
+
+        function multiplicar() {
+            const numero1 = parseFloat(document.getElementById("numero1").value);
+            const numero2 = parseFloat(document.getElementById("numero2").value);
+            const resultado = numero1 * numero2;
+            document.getElementById("resultado").textContent = `Resultado: ${resultado}`;
+        }
+
+        function restar() {
+            const numero1 = parseFloat(document.getElementById("numero1").value);
+            const numero2 = parseFloat(document.getElementById("numero2").value);
+            const resultado = numero1 - numero2;
+            document.getElementById("resultado").textContent = `Resultado: ${resultado}`;
+        }
+    </script>
+</body>
+</html>
